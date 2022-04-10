@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 
+import NavBar from "./components/NavBar";
 import ListFighters from "./components/ListFighters";
 
 import { Fighter } from "./data/fighter";
@@ -28,7 +29,8 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="content-main-fighters">
+      <NavBar></NavBar>
       <ListFighters listFighters={listFighters}></ListFighters>
     </div>
   );
