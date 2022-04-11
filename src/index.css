@@ -61,6 +61,7 @@ body {
 
 .lists-fighters {
   margin-top: 140px;
+  margin-bottom: 80px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -98,7 +99,7 @@ body {
 
 .flip-card .contenedor-fighter-back {
   transform: rotateY(180deg);
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.16), 0 0 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0px 22px 0 rgb(0 0 0 / 16%), 0 10px 19px 0 rgb(0 0 0 / 12%);
 }
 
 .contenedor-fighter-front {
@@ -175,15 +176,31 @@ body {
   font-weight: 400;
 }
 
+.contenedor-back-info {
+  position: relative;
+}
+
 .imagen-fighter-back {
   position: absolute;
-  right: 10px;
-  height: 250px;
+  right: 50px;
+  height: 235px;
   object-fit: contain;
   padding-top: 20px;
   display: block;
   max-width: 100%;
   z-index: -1;
+}
+
+.contenedor-back-name-apodo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+  width: 130px;
 }
 
 .contenedor-back-apodo {
@@ -196,28 +213,81 @@ body {
 }
 
 .contenedor-back-nombre {
-  padding: 0 0 5px;
-  margin: 10px 0;
   font-size: 1.4rem;
-  line-height: 1.75rem;
+  line-height: 1.3rem;
   text-transform: uppercase;
   color: #191919;
   font-weight: 900;
   text-align: left;
+  width: 100%;
 }
 
-.prueba {
-  position: relative;
-}
-
-.contenedor-back-info {
+.button-perfil-atleta button {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 180px;
+  left: 20px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  width: 180px;
+  height: 50px;
+}
+
+.social-network-perfil {
+  position: absolute;
+  top: 257px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
   flex-grow: 1;
-  width: 130px;
+  height: 33px;
+  width: 100%;
+  border-top: 1px solid #e5e5e7;
+}
+
+.social-network-perfil span {
+  color: #a9a9ac;
+  font-weight: 700;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icons-socials {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-socials svg {
+  padding: 0 5px;
+}
+
+.container-button-cargar-mas {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container-button-cargar-mas button {
+  width: 160px;
+  height: 50px;
+  border: none;
+  background-color: #000000;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.5s ease-in-out;
+  margin-bottom: 50px;
 }

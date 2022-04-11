@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 
 import NavBar from "./components/NavBar";
 import ListFighters from "./components/ListFighters";
+import ButtonCargarMas from "./components/ButtonCargarMas";
 
 import { Fighter } from "./data/fighter";
 
 function App() {
   const [listFighters, setListFighters] = useState([]);
+  const [totalListFighters, setTotalListFighters] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,10 +22,15 @@ function App() {
           fighter.categoria,
           fighter.record,
           fighter.imagen,
+          fighter.imagenTrasera,
+          fighter.url,
+          fighter.url2,
+          fighter.url3,
           index
         );
       });
-      setListFighters(listsModelsFighters);
+      setTotalListFighters(listsModelsFighters);
+      setListFighters(totalListFighters.slice(0, 20));
     };
     fetchData();
   }, []);
@@ -31,7 +38,10 @@ function App() {
   return (
     <div className="content-main-fighters">
       <NavBar></NavBar>
-      <ListFighters listFighters={listFighters}></ListFighters>
+      <div className="principal-section">
+        <ListFighters listFighters={listFighters}></ListFighters>
+        <ButtonCargarMas></ButtonCargarMas>
+      </div>
     </div>
   );
 }
