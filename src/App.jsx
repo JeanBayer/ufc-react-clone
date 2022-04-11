@@ -9,13 +9,14 @@ import { Fighter } from "./data/fighter";
 function App() {
   const [listFighters, setListFighters] = useState([]);
   const [totalListFighters, setTotalListFighters] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const url = "../assets/ufcFighters.json";
       const result = await fetch(url);
       const fighters = await result.json();
-      const listsModelsFighters = fighters.map((fighter, index) => {
+      const listsModelsFighters = await fighters.map((fighter, index) => {
         return new Fighter(
           fighter.nombre,
           fighter.apodo,
@@ -29,19 +30,30 @@ function App() {
           index
         );
       });
+      setListFighters(listsModelsFighters.slice(0, 20));
       setTotalListFighters(listsModelsFighters);
-      setListFighters(totalListFighters.slice(0, 20));
+      setIsLoading(false);
     };
     fetchData();
   }, []);
 
+  const cargarMas = () => {
+    const quantityFighters = listFighters.length;
+    const quantityFightersInView = quantityFighters + 20;
+    setListFighters(totalListFighters.slice(0, quantityFightersInView));
+  };
+
   return (
     <div className="content-main-fighters">
       <NavBar></NavBar>
-      <div className="principal-section">
+
+      {isLoading ? (
+        <p>Cargando...</p>
+      ) : (
         <ListFighters listFighters={listFighters}></ListFighters>
-        <ButtonCargarMas></ButtonCargarMas>
-      </div>
+      )}
+
+      <ButtonCargarMas cargarMas={cargarMas}></ButtonCargarMas>
     </div>
   );
 }

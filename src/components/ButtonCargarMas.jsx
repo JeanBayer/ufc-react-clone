@@ -1,9 +1,7 @@
-import React from "react";
-
-const ButtonCargarMas = () => {
+const ButtonCargarMas = ({ cargarMas }) => {
   return (
     <div className="container-button-cargar-mas">
-      <button>Cargar Mas</button>
+      <button onClick={cargarMas}>Carga Más</button>
     </div>
   );
 };

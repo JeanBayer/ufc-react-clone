@@ -1,45 +1,46 @@
 body {
   font-family: "Titillium Web", sans-serif;
-  margin: 0;
-  padding: 0;
   font-size: 100%;
   line-height: 1.5em;
+  margin: 0;
+  padding: 0;
 }
+
 .content-main-fighters {
-  position: relative;
   background-color: #fff;
+  position: relative;
 }
 
 .navbar {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  height: 65px;
   position: fixed;
   top: 0;
-  z-index: 998;
-  height: 65px;
   width: 100%;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  z-index: 998;
 }
 
 .header-content-desktop {
-  background-color: #fff;
-  height: 65px;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
   align-content: center;
+  align-items: center;
+  background-color: #fff;
   cursor: pointer;
+  display: flex;
+  height: 65px;
+  justify-content: space-evenly;
   transition: background-color 2s ease-in-out;
+  width: 100%;
 }
 
 .header-content-desktop span {
+  align-items: center;
+  color: #000;
+  display: flex;
   font-size: 0.8em;
   font-weight: bold;
-  color: #000;
-  text-transform: uppercase;
-  padding: 0 10px;
   height: 90%;
-  display: flex;
-  align-items: center;
+  padding: 0 10px;
+  text-transform: uppercase;
 }
 
 .header-content-desktop span:hover {
@@ -55,34 +56,34 @@ body {
 }
 
 .header-content-desktop span img {
-  width: 98px;
   height: 66px;
+  width: 98px;
 }
 
 .lists-fighters {
-  margin-top: 140px;
-  margin-bottom: 80px;
+  align-content: stretch;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-right: -0.75rem;
+  margin-bottom: 80px;
   margin-left: -0.75rem;
-  align-content: stretch;
+  margin-right: -0.75rem;
+  margin-top: 140px;
 }
 
 .flip-card {
-  margin: 30px;
-  width: 290px;
   height: 290px;
+  margin: 30px;
   perspective: 1000px;
+  width: 290px;
 }
 
 .contenedor-flip-card-inner {
-  width: 290px;
   height: 290px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.7s ease-in-out;
+  width: 290px;
 }
 
 .flip-card:hover .contenedor-flip-card-inner {
@@ -91,15 +92,15 @@ body {
 
 .flip-card .contenedor-fighter-front,
 .flip-card .contenedor-fighter-back {
+  backface-visibility: hidden;
+  height: 100%;
   position: absolute;
   width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
 }
 
 .flip-card .contenedor-fighter-back {
-  transform: rotateY(180deg);
   box-shadow: 0 0px 22px 0 rgb(0 0 0 / 16%), 0 10px 19px 0 rgb(0 0 0 / 12%);
+  transform: rotateY(180deg);
 }
 
 .contenedor-fighter-front {
@@ -112,68 +113,68 @@ body {
 }
 
 .contenedor-fighter {
-  width: 100%;
   height: 100%;
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .contenedor-imagen {
-  width: 100%;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: column;
   border-bottom: 2px solid #eeeeef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
 .imagen-fighter {
-  margin: 0 auto -2px;
   height: auto;
-  width: auto;
+  margin: 0 auto -2px;
   max-height: 100px;
   max-width: 160px;
+  width: auto;
 }
 
 .contenedor-info {
-  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   flex-grow: 1;
+  justify-content: center;
+  width: 100%;
 }
 
 .contenedor-info-apodo {
-  width: 100%;
-  padding: 15px 0 5px;
-  margin: 0;
-  line-height: 1.125rem;
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: bold;
-  text-align: center;
   color: #abadb1;
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  margin: 0;
+  padding: 15px 0 5px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .contenedor-info-nombre {
-  width: 100%;
-  padding: 0 0 5px;
-  margin: 0;
-  font-size: 1.625rem;
-  line-height: 1.75rem;
-  text-transform: uppercase;
   color: #191919;
+  font-size: 1.625rem;
   font-weight: 700;
+  line-height: 1.75rem;
+  margin: 0;
+  padding: 0 0 5px;
   text-align: center;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 .contenedor-info-categoria {
-  width: 100%;
-  text-align: center;
-  line-height: 1.25rem;
-  font-size: 0.875rem;
   color: #585b63;
+  font-size: 0.875rem;
   font-weight: 400;
+  line-height: 1.25rem;
+  text-align: center;
+  width: 100%;
 }
 
 .contenedor-back-info {
@@ -181,83 +182,83 @@ body {
 }
 
 .imagen-fighter-back {
-  position: absolute;
-  right: 50px;
+  display: block;
   height: 235px;
+  max-width: 100%;
   object-fit: contain;
   padding-top: 20px;
-  display: block;
-  max-width: 100%;
+  position: absolute;
+  right: 50px;
   z-index: -1;
 }
 
 .contenedor-back-name-apodo {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
   flex-grow: 1;
+  justify-content: center;
+  left: 20px;
+  position: absolute;
+  top: 20px;
   width: 130px;
 }
 
 .contenedor-back-apodo {
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  font-weight: bold;
   color: #abadb1;
+  font-size: 0.8rem;
+  font-weight: bold;
   text-align: left;
+  text-transform: uppercase;
   width: 100%;
 }
 
 .contenedor-back-nombre {
-  font-size: 1.4rem;
-  line-height: 1.3rem;
-  text-transform: uppercase;
   color: #191919;
+  font-size: 1.4rem;
   font-weight: 900;
+  line-height: 1.3rem;
   text-align: left;
+  text-transform: uppercase;
   width: 100%;
 }
 
 .button-perfil-atleta button {
-  position: absolute;
-  top: 180px;
-  left: 20px;
-  border: none;
   background-color: #000000;
+  border: none;
   color: #fff;
+  cursor: pointer;
   font-size: 0.9rem;
   font-weight: 700;
+  height: 50px;
+  left: 20px;
+  position: absolute;
   text-transform: uppercase;
-  cursor: pointer;
+  top: 180px;
   transition: background-color 0.5s ease-in-out;
   width: 180px;
-  height: 50px;
 }
 
 .social-network-perfil {
-  position: absolute;
-  top: 257px;
+  align-items: center;
+  border-top: 1px solid #e5e5e7;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
   flex-grow: 1;
   height: 33px;
+  justify-content: space-around;
+  position: absolute;
+  top: 257px;
   width: 100%;
-  border-top: 1px solid #e5e5e7;
 }
 
 .social-network-perfil span {
+  align-items: center;
   color: #a9a9ac;
+  display: flex;
   font-weight: 700;
   height: 100%;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .icons-socials {
@@ -273,21 +274,30 @@ body {
 }
 
 .container-button-cargar-mas {
-  width: 100%;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .container-button-cargar-mas button {
-  width: 160px;
-  height: 50px;
-  border: none;
-  background-color: #000000;
-  color: #fff;
+  background-color: #fff;
+  border: 1px solid #d5d6d8;
+  color: #000;
+  cursor: pointer;
+  font-size: 0.875rem;
   font-size: 0.9rem;
   font-weight: 700;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.5s ease-in-out;
+  height: 50px;
+  line-height: 1rem;
   margin-bottom: 50px;
+  padding: 1rem 2.25rem;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease-in-out;
+  width: 320px;
+}
+
+.container-button-cargar-mas button:hover {
+  background-color: #f5f5f5;
 }
