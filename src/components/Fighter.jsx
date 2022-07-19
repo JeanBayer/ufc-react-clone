@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types";
 
 const Fighter = ({ fighter }) => {
   const {
@@ -43,7 +43,7 @@ const Fighter = ({ fighter }) => {
               />
             </div>
             <div className="contenedor-info">
-              <span className="contenedor-info-apodo">"{apodo}"</span>
+              <span className="contenedor-info-apodo">{`"${apodo}"`}</span>
               <span className="contenedor-info-nombre">{nombre}</span>
               <span className="contenedor-info-categoria">{categoria}</span>
               <span className="contenedor-info-categoria">{record}</span>
@@ -59,7 +59,7 @@ const Fighter = ({ fighter }) => {
               loading="lazy"
             />
             <div className="contenedor-back-name-apodo">
-              <span className="contenedor-back-apodo">"{apodo}"</span>
+              <span className="contenedor-back-apodo">{`"${apodo}"`}</span>
               <span className="contenedor-back-nombre">{nombre}</span>
             </div>
             <div className="button-perfil-atleta">
@@ -118,6 +118,10 @@ const Fighter = ({ fighter }) => {
       </div>
     </div>
   );
+};
+
+Fighter.propTypes = {
+  fighter: PropTypes.object.isRequired,
 };
 
 export default Fighter;

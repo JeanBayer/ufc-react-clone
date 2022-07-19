@@ -9,6 +9,7 @@ body {
 .content-main-fighters {
   background-color: #fff;
   position: relative;
+  width: 100%;
 }
 
 .navbar {
@@ -18,6 +19,39 @@ body {
   top: 0;
   width: 100%;
   z-index: 998;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.header-content-mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.header-content-mobile span {
+  align-items: center;
+  color: #000;
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  height: 90%;
+  padding: 0 10px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .header-content-mobile {
+    display: none;
+  }
+
+  .header-content-desktop {
+    display: flex !important;
+  }
 }
 
 .header-content-desktop {
@@ -30,6 +64,7 @@ body {
   justify-content: space-evenly;
   transition: background-color 2s ease-in-out;
   width: 100%;
+  display: none;
 }
 
 .header-content-desktop span {
@@ -55,7 +90,8 @@ body {
   color: #fff;
 }
 
-.header-content-desktop span img {
+.header-content-desktop span img,
+.header-content-mobile span img {
   height: 66px;
   width: 98px;
 }
@@ -66,24 +102,29 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 80px;
-  margin-left: -0.75rem;
-  margin-right: -0.75rem;
-  margin-top: 140px;
+  border-top: 1px solid rgb(189, 174, 174);
+}
+
+@media (min-width: 1024px) {
+  .lists-fighters {
+    margin-left: 100px;
+    margin-right: 100px;
+  }
 }
 
 .flip-card {
-  height: 290px;
+  height: 250px;
   margin: 30px;
   perspective: 1000px;
-  width: 290px;
+  width: 250px;
 }
 
 .contenedor-flip-card-inner {
-  height: 290px;
+  height: 250px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.7s ease-in-out;
-  width: 290px;
+  width: 250px;
 }
 
 .flip-card:hover .contenedor-flip-card-inner {
@@ -107,7 +148,6 @@ body {
   backface-visibility: hidden;
   background: #fff;
   overflow: hidden;
-  padding: 20px;
   position: relative;
   z-index: 1;
 }
@@ -183,12 +223,12 @@ body {
 
 .imagen-fighter-back {
   display: block;
-  height: 235px;
+  height: 190px;
   max-width: 100%;
   object-fit: contain;
-  padding-top: 20px;
+  padding-top: 17px;
   position: absolute;
-  right: 50px;
+  right: 40px;
   z-index: -1;
 }
 
@@ -228,15 +268,16 @@ body {
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  height: 50px;
+  height: 42px;
   left: 20px;
+  padding: 5px 10px;
   position: absolute;
   text-transform: uppercase;
-  top: 180px;
+  top: 150px;
   transition: background-color 0.5s ease-in-out;
-  width: 180px;
+  width: 136px;
 }
 
 .social-network-perfil {
@@ -248,7 +289,7 @@ body {
   height: 33px;
   justify-content: space-around;
   position: absolute;
-  top: 257px;
+  top: 216px;
   width: 100%;
 }
 
@@ -295,9 +336,90 @@ body {
   text-decoration: none;
   text-transform: uppercase;
   transition: background-color 0.5s ease-in-out;
-  width: 320px;
+  width: 300px;
 }
 
 .container-button-cargar-mas button:hover {
   background-color: #f5f5f5;
+}
+
+.section-categorias {
+  margin-top: 90px;
+}
+
+.section-categorias-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.section-categorias-nav-ul {
+  font-size: 26px;
+  cursor: pointer;
+  color: #92949b;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 5px;
+  margin: 5px;
+}
+
+@media (min-width: 768px) {
+  .section-categorias-nav-ul {
+    font-size: 3rem;
+    margin-top: 6rem;
+  }
+}
+
+.resaltado {
+  color: #000;
+}
+
+.section-categorias-informacion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-categorias-informacion p {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-categorias-informacion-input {
+  width: 90%;
+  border: none;
+  background-color: #f8f8f8;
+  padding: 10px 0 10px 50px;
+  margin: 20px 50px;
+  box-sizing: border-box;
+}
+
+.section-categorias-informacion-input::placeholder {
+  color: #9c9c9c;
+}
+
+@media (min-width: 768px) {
+  .section-categorias-informacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 100px 20px;
+  }
+
+  .section-categorias-informacion p {
+    display: flex;
+    justify-content: center;
+    flex: 6;
+  }
+
+  .section-categorias-informacion-input {
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    margin: 0 0 0 80px;
+    padding: 10px 10px;
+  }
 }

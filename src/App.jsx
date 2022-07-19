@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import NavBar from "./components/NavBar";
+import Categorias from "./components/Categorias";
 import ListFighters from "./components/ListFighters";
 import ButtonCargarMas from "./components/ButtonCargarMas";
 
@@ -8,8 +9,10 @@ import { Fighter } from "./data/fighter";
 
 function App() {
   const [listFighters, setListFighters] = useState([]);
+  const [listFightersFiltered, setListFightersFiltered] = useState([]);
   const [totalListFighters, setTotalListFighters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [categoria, setCategoria] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,10 +40,27 @@ function App() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    let listaPorCategoria;
+    if (categoria === "mujeres") {
+      listaPorCategoria = totalListFighters.filter((fighter) =>
+        fighter.categoria.includes("Women")
+      );
+    } else if (categoria === "hombres") {
+      listaPorCategoria = totalListFighters.filter(
+        (fighter) => !fighter.categoria.includes("Women")
+      );
+    } else {
+      listaPorCategoria = totalListFighters;
+    }
+    setListFightersFiltered(listaPorCategoria);
+    setListFighters(listaPorCategoria.slice(0, 20));
+  }, [categoria]);
+
   const cargarMas = () => {
     const quantityFighters = listFighters.length;
     const quantityFightersInView = quantityFighters + 20;
-    setListFighters(totalListFighters.slice(0, quantityFightersInView));
+    setListFighters(listFightersFiltered.slice(0, quantityFightersInView));
   };
 
   return (
@@ -50,7 +70,13 @@ function App() {
       {isLoading ? (
         <p>Cargando...</p>
       ) : (
-        <ListFighters listFighters={listFighters}></ListFighters>
+        <>
+          <Categorias
+            categoria={categoria}
+            setCategoria={setCategoria}
+          ></Categorias>
+          <ListFighters listFighters={listFighters}></ListFighters>
+        </>
       )}
 
       <ButtonCargarMas cargarMas={cargarMas}></ButtonCargarMas>

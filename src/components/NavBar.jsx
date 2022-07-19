@@ -1,5 +1,3 @@
-import React from "react";
-
 import IconUfc from "../img/icon-ufc.svg";
 
 const NavBar = () => {
@@ -19,6 +17,12 @@ const NavBar = () => {
         <span>redes sociales</span>
         <span>ve</span>
         <span>tienda</span>
+      </div>
+      <div className="header-content-mobile">
+        <span>
+          <img src={IconUfc} alt="icon-ufc" />
+        </span>
+        <span>peleadores</span>
       </div>
     </div>
   );
