@@ -1,13 +1,13 @@
 import { createContext } from "react";
 import PropTypes from "prop-types";
+import useFighters from "../hooks/useFighters";
 
 const DataContext = createContext();
 
 const DataProvider = ({ children }) => {
+  const fighters = useFighters();
   return (
-    <DataContext.Provider value={{ hola: "mundo" }}>
-      {children}
-    </DataContext.Provider>
+    <DataContext.Provider value={{ fighters }}>{children}</DataContext.Provider>
   );
 };
 

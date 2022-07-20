@@ -1,7 +1,5 @@
 const RedesSociales = () => {
-  return (
-    <div>RedesSociales</div>
-  )
-}
+  return <div>RedesSociales</div>;
+};
 
-export default RedesSociales
+export default RedesSociales;

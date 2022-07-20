@@ -1,4 +1,5 @@
-import IconUfc from "../img/icon-ufc.svg";
+// eslint-disable-next-line import/no-absolute-path
+import IconUfc from "/assets/icons/icon-ufc.svg";
 
 const NavBar = () => {
   return (

@@ -1,7 +1,5 @@
 const Rankings = () => {
-  return (
-    <div>Rankings</div>
-  )
-}
+  return <div>Rankings</div>;
+};
 
-export default Rankings
+export default Rankings;

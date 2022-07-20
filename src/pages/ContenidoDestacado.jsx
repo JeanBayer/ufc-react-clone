@@ -1,7 +1,5 @@
 const ContenidoDestacado = () => {
-  return (
-    <div>ContenidoDestacado</div>
-  )
-}
+  return <div>ContenidoDestacado</div>;
+};
 
-export default ContenidoDestacado
+export default ContenidoDestacado;

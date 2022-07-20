@@ -1,7 +1,5 @@
 const Atletas = () => {
-  return (
-    <div>Atletas</div>
-  )
-}
+  return <div>Atletas</div>;
+};
 
-export default Atletas
+export default Atletas;

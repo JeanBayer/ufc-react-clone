@@ -1,7 +1,5 @@
 const Videoteca = () => {
-  return (
-    <div>Videoteca</div>
-  )
-}
+  return <div>Videoteca</div>;
+};
 
-export default Videoteca
+export default Videoteca;

@@ -1,7 +1,5 @@
 const Ver = () => {
-  return (
-    <div>Ver</div>
-  )
-}
+  return <div>Ver</div>;
+};
 
-export default Ver
+export default Ver;

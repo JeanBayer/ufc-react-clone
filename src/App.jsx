@@ -1,8 +1,6 @@
-import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DataProvider } from "./context/DataProvider";
 
-// import { Fighter } from "./data/fighter";
 import Layout from "./layout/Layout";
 import Home from "./pages/Home";
 import Eventos from "./pages/Eventos";
@@ -14,29 +12,6 @@ import RedesSociales from "./pages/RedesSociales";
 import Ver from "./pages/Ver";
 
 function App() {
-  useEffect(() => {
-    const fetchData = async () => {
-      // const url = "../assets/ufcFighters.json";
-      // const result = await fetch(url);
-      // const fighters = await result.json();
-      // const listsModelsFighters = await fighters.map((fighter, index) => {
-      //   return new Fighter(
-      //     fighter.nombre,
-      //     fighter.apodo,
-      //     fighter.categoria,
-      //     fighter.record,
-      //     fighter.imagen,
-      //     fighter.imagenTrasera,
-      //     fighter.url,
-      //     fighter.url2,
-      //     fighter.url3,
-      //     index
-      //   );
-      // });
-    };
-    fetchData();
-  }, []);
-
   return (
     <BrowserRouter>
       <DataProvider>
